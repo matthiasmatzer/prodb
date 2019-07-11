@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using ProDB.Models;
 
 namespace ProDB
 {
@@ -46,6 +48,8 @@ namespace ProDB
                 options.Filters.Add(new AuthorizeFilter(policy));
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
