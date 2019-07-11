@@ -49,7 +49,9 @@ namespace ProDB
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-
+            // The Database Connection is initiatlised here
+            services.AddDbContext<ProtagonistContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("ProtagonistContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
